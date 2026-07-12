@@ -6,7 +6,7 @@
  *     ListNode() {}
  *     ListNode(int val) { this.val = val; }
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
+ * }  
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
@@ -18,7 +18,7 @@ class Solution {
             curr.next = prev;
             prev = curr;
             curr = fwd;
-        }
+        } 
         return prev;
     }
 }

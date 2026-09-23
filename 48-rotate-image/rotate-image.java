@@ -1,23 +1,24 @@
 class Solution {
     public void rotate(int[][] arr) {
-        for (int i =1; i < arr.length; i++ ){
-            for (int j=0 ; j< i; j++){
+        int n = arr.length;
+        for(int i=0; i<n; i++){
+            for(int j = i+1; j<n; j++){
                 int temp = arr[i][j];
                 arr[i][j] = arr[j][i];
                 arr[j][i] = temp;
             }
         }
-        
-        for (int i =0; i< arr.length; i++){
-            int lowCol = 0; int hiCol = arr.length -1;
-            while (lowCol < hiCol){
-                int temp = arr[i][lowCol];
-                arr[i][lowCol] =  arr[i][hiCol];
-                 arr[i][hiCol] = temp;
-                 lowCol ++;
-                 hiCol --;
+        for(int i =0; i<n; i++){
+            int left =0, right = n-1;
+            while(left < right){
+                int temp = arr[i][left];
+                arr[i][left] = arr[i][right];
+                arr[i][right] = temp;
+                left++;
+                right--;
             }
         }
+        
         
     }
 }
